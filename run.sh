@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Cek apakah Lighthouse sudah terinstall
+if ! command -v lighthouse &> /dev/null; then
+    echo "Lighthouse is not installed. Please install Lighthouse first."
+    echo "npm install -g lighthouse"
+    exit
+fi
+
 # Konfigurasi default
 HEADLESS="--chrome-flags='--headless'"
 USERAGENT='--emulatedUserAgent="Chrome-Lighthouse"'
